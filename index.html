@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, starting with Sitcom and Ask Away.">
-<meta name="theme-color" content="#a9d2f7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a1834" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#a9d2f7">
 <link rel="canonical" href="https://homecreeklabs.app/">
 <link rel="icon" href="img/logo-light.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -41,14 +40,6 @@
   --shadow: 0 1px 2px rgba(14,26,44,.04), 0 18px 40px -18px rgba(14,26,44,.18);
   --font: "Manrope", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --wordmark: "Shrikhand", "Cooper Black", Georgia, serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --sky-top: #0a1834; --sky-mid: #0f1d36; --bg: #0b111b; --surface: #131b28;
-    --fg: #edf3fb; --muted: #9aa9bc; --line: #222d3d; --accent: #6aa5ff; --accent-fg: #06101f;
-    --soft: #172338; --cloud: #24314a; --cloud-shade: rgba(0,0,0,.25);
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 18px 40px -18px rgba(0,0,0,.7); color-scheme: dark;
-  }
 }
 :root[data-theme="dark"] {
   --sky-top: #0a1834; --sky-mid: #0f1d36; --bg: #0b111b; --surface: #131b28;
@@ -198,7 +189,14 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .feature + .feature { margin-top: 1.25rem; }
 .feature.askaway { background: #050b17; color: #eef2f8; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
 .feature.askaway .art { background: radial-gradient(60% 55% at 50% 45%, rgba(217,169,95,.38), transparent 70%), radial-gradient(45% 40% at 70% 85%, rgba(70,110,200,.35), transparent 70%); }
-.feature.askaway .art .iphone { rotate: -4deg; }
+.feature.askaway .art.duo { display: flex; justify-content: center; align-items: center; padding: 3rem 1rem; }
+.feature.askaway .art.duo .iphone { --w: 240px; }
+.feature.askaway .art.duo .back { rotate: -7deg; margin-right: -70px; translate: 0 22px; }
+.feature.askaway .art.duo .front { rotate: 5deg; z-index: 1; }
+.status.dark { color: #0b1220; background: #f7f8fa; }
+.status.dark .bat { border-color: rgba(11,18,32,.5); }
+.status.dark .bat::before { background: #0b1220; }
+.status.dark .bat::after { background: rgba(11,18,32,.5); }
 .feature.askaway p { color: #a7b0c0; }
 .feature.askaway .points li { color: #dde3ee; }
 .feature.askaway .points li::before { background: #d9a95f; }
@@ -271,7 +269,9 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
   .feature .art .iphone { --w: 250px; rotate: 0deg; margin-bottom: -90px; }
   .feature .copy { padding: 2.25rem 1.6rem 2.5rem; order: -1; }
   .feature.askaway { grid-template-columns: minmax(0, 1fr); }
-  .feature.askaway .art .iphone { rotate: 0deg; }
+  .feature.askaway .art.duo { padding: 2.5rem 1rem 0; align-items: end; }
+  .feature.askaway .art.duo .iphone { --w: 180px; margin-bottom: -60px; }
+  .feature.askaway .art.duo .back { margin-right: -50px; }
   .lab, .how { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
@@ -332,7 +332,7 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
   <div class="stage" aria-label="Sitcom and Ask Away on iPhone">
     <div class="float f2 s-left"><div class="iphone side"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/sitcom-size.jpg" alt="Sitcom: How big is the cast? screen" loading="lazy"></div></div></div>
     <div class="float f1"><div class="iphone center"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/sitcom-category.jpg" alt="Sitcom: First, what kind of show is this? screen"></div></div></div>
-    <div class="float f3 s-right"><div class="iphone side"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/askaway-home.jpg" alt="Ask Away: Ask the people you follow what matters most" loading="lazy"></div></div></div>
+    <div class="float f3 s-right"><div class="iphone side"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/askaway-live.jpg" alt="Ask Away: a live session with the Now Answering question" loading="lazy"></div></div></div>
   </div>
 </div>
 
@@ -342,7 +342,7 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
       <div class="head">
         <p class="eyebrow">The lineup</p>
         <h2>Every app we make, in one place.</h2>
-        <p>Each app is designed, built and supported by Home Creek Labs. We add new ones as they leave the lab.</p>
+        <p>Each app is designed, built and supported by Home Creek Labs. We add new ones as they are ready.</p>
       </div>
 
       <!-- To add a live app, copy this <article class="feature"> block and change the name, copy, screenshot and links. -->
@@ -376,8 +376,9 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
       </article>
 
       <article class="feature askaway" id="askaway">
-        <div class="art" aria-hidden="true">
-          <div class="iphone"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/askaway-home.jpg" alt="" loading="lazy"></div></div>
+        <div class="art duo" aria-hidden="true">
+          <div class="iphone back"><div class="screen"><span class="island"></span><div class="status dark"><span>9:41</span><span class="bat"></span></div><img src="img/askaway-following.jpg" alt="" loading="lazy"></div></div>
+          <div class="iphone front"><div class="screen"><span class="island"></span><div class="status dark"><span>9:41</span><span class="bat"></span></div><img src="img/askaway-live.jpg" alt="" loading="lazy"></div></div>
         </div>
         <div class="copy">
           <span class="onair"><i></i> Live sessions happening now</span>
@@ -385,7 +386,7 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
           <h3>Ask the people you follow what matters most.</h3>
           <p>Join live Q&amp;A sessions with founders, creators and experts. Ask your own question or back the ones you want answered most, and the audience decides what gets asked next.</p>
           <ul class="points">
-            <li>Live, face-to-face sessions with real hosts</li>
+            <li>Follow hosts and see who is live right now</li>
             <li>Back a question to move it up the queue</li>
             <li>Anyone can apply to host their own Ask Away</li>
           </ul>
@@ -396,26 +397,6 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
         </div>
       </article>
 
-      <div class="lab">
-        <div class="slot">
-          <div class="q" aria-hidden="true">03</div>
-          <h4>In the lab</h4>
-          <p>Our third app is being built now. Name and details coming soon.</p>
-          <span class="tag">Coming soon</span>
-        </div>
-        <div class="slot">
-          <div class="q" aria-hidden="true">04</div>
-          <h4>In the lab</h4>
-          <p>Another app on the way. Check back here for the launch.</p>
-          <span class="tag">Coming soon</span>
-        </div>
-        <div class="slot">
-          <div class="q" aria-hidden="true">05</div>
-          <h4>Your idea here</h4>
-          <p>We are always sketching what comes next. The lineup keeps growing.</p>
-          <span class="tag">Always building</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -518,7 +499,7 @@ var METRICS = {
 (function () {
   var root = document.documentElement, btn = document.getElementById('theme-toggle');
   var mq = window.matchMedia('(prefers-color-scheme: dark)');
-  function isDark() { var t = root.getAttribute('data-theme'); return t ? t === 'dark' : mq.matches; }
+  function isDark() { return root.getAttribute('data-theme') === 'dark'; }
   function sync() { var d = isDark(); root.classList.toggle('is-dark', d); btn.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode'); }
   try { var saved = localStorage.getItem('hcl-theme'); if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved); } catch (e) {}
   btn.addEventListener('click', function () {
