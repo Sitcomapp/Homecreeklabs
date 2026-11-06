@@ -364,6 +364,26 @@ html { scroll-behavior: smooth; }
 }
 .pill a, .pill-note { white-space: nowrap; }
 @media (max-width: 560px) { .pill { gap: .55rem; padding: .45rem .85rem; } .pill-note, .pill-note + .pill-sep, .pill .pill-sep:nth-last-child(2) { display: none; } .pill .sc-logo { font-size: .95rem; } .pill .aa-logo, .pill .hl-logo { font-size: .9rem; } }
+
+/* ---------- Phone frames: show each screenshot whole (no cover-cropping) ---------- */
+.iphone { aspect-ratio: auto; height: auto; flex: none; }
+.screen { height: auto; }
+.status { height: calc(var(--w) * .125); }
+.island { top: calc(var(--w) * .03); height: calc(var(--w) * .085); }
+.screen img { display: block; flex: none; width: 100%; height: auto; aspect-ratio: 393 / 852; object-fit: cover; object-position: top; }
+.feature.askaway .art.duo .back, .feature.homelove .art.duo .back { margin-right: -28px; }
+@media (max-width: 900px) {
+  .feature.askaway .art.duo .back, .feature.homelove .art.duo .back { margin-right: -34px; }
+  .feature.askaway .art.duo .iphone, .feature.homelove .art.duo .iphone { --w: 164px; }
+}
+.stage > .float { position: relative; }
+.stage > .s-left, .stage > .s-right { z-index: 1; }
+.stage > .f1 { z-index: 3; }
+@media (max-width: 900px) {
+  .feature .art .iphone, .feature.askaway .art.duo .iphone, .feature.homelove .art.duo .iphone { margin-bottom: 0; }
+  .feature .art, .feature.askaway .art.duo, .feature.homelove .art.duo { padding: 1rem 1rem 2.5rem; align-items: center; }
+}
+@media (max-width: 640px) { .stage .side { --w: 118px; } .stage .center { --w: 184px; } .stage { overflow: visible; } }
 </style>
 </head>
 <body>
