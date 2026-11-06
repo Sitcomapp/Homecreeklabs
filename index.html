@@ -501,11 +501,11 @@ var METRICS = {
   var mq = window.matchMedia('(prefers-color-scheme: dark)');
   function isDark() { return root.getAttribute('data-theme') === 'dark'; }
   function sync() { var d = isDark(); root.classList.toggle('is-dark', d); btn.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode'); }
-  try { var saved = localStorage.getItem('hcl-theme'); if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved); } catch (e) {}
+  try { var saved = localStorage.getItem('hcl-theme-v2'); if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved); } catch (e) {}
   btn.addEventListener('click', function () {
     var next = isDark() ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
-    try { localStorage.setItem('hcl-theme', next); } catch (e) {}
+    try { localStorage.setItem('hcl-theme-v2', next); } catch (e) {}
     sync();
   });
   if (mq.addEventListener) mq.addEventListener('change', sync);
