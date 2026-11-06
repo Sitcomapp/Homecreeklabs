@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, starting with Sitcom and Ask Away.">
+<meta name="description" content="Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, starting with Sitcom, Ask Away and Homelove.">
 <meta name="theme-color" content="#a9d2f7">
 <link rel="canonical" href="https://homecreeklabs.app/">
 <link rel="icon" href="img/logo-light.svg" type="image/svg+xml">
@@ -11,14 +11,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://homecreeklabs.app/">
 <meta property="og:title" content="Home Creek Labs">
-<meta property="og:description" content="We make apps people love to open. Home of Sitcom and Ask Away.">
+<meta property="og:description" content="We make apps people love to open. Home of Sitcom, Ask Away and Homelove.">
 <meta property="og:image" content="https://homecreeklabs.app/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Home Creek Labs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Shrikhand&family=Plus+Jakarta+Sans:wght@800&family=Gaegu:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Shrikhand&family=Plus+Jakarta+Sans:wght@800&family=Gaegu:wght@700&family=Inter:wght@500&display=swap">
 <style>
 /* Layout: an open sky. Headline up top, real app screens on iPhones floating in clouds, then the app lineup as big rounded cards. */
 :root {
@@ -337,6 +337,33 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
 #sitcom, #askaway { scroll-margin-top: 6rem; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---------- Homelove card (brand: heart-house mark, lowercase "homelove" in Inter 500, ink #1b1f1c on warm cream, green #3f8f6b) ---------- */
+.hl-logo { display: inline-flex; align-items: center; gap: .32em; font-family: "Inter", var(--font); font-weight: 500; letter-spacing: -.035em; color: #1b1f1c; text-decoration: none; }
+.hl-heart { display: inline-block; height: 1.05em; aspect-ratio: 636/589; background: currentColor;
+  -webkit-mask: url(img/homelove-logo-light.png) center / contain no-repeat; mask: url(img/homelove-logo-light.png) center / contain no-repeat; }
+:root[data-theme="dark"] .hl-logo { color: #ece8df; }
+.feature h3.hl-logo { font-size: clamp(2.4rem, 5.6vw, 3.5rem); line-height: 1; }
+.pill .hl-logo { font-size: 1rem; color: var(--glass-fg); }
+.pill a.hl-logo:hover { transform: translateY(-1px) scale(1.04); }
+.feature.homelove .art.duo { display: flex; justify-content: center; align-items: center; padding: 3rem 1rem; }
+.feature.homelove .art.duo .iphone { --w: 240px; }
+.feature.homelove .art.duo .back { rotate: -6deg; margin-right: -70px; translate: 0 22px; }
+.feature.homelove .art.duo .front { rotate: 5deg; z-index: 1; }
+.status.hl { color: #1b1f1c; background: #f5f4ef; }
+.status.hl .bat { border-color: rgba(27,31,28,.5); } .status.hl .bat::before { background: #1b1f1c; } .status.hl .bat::after { background: rgba(27,31,28,.5); }
+.feature.homelove .points li::before { background: #3f8f6b; }
+.feature .store.hl-btn { background: #1b1f1c; color: #f5f4ef; }
+:root[data-theme="dark"] .feature .store.hl-btn { background: #ece8df; color: #1b1f1c; }
+.onair.soon i { background: #3f8f6b; box-shadow: 0 0 0 4px rgba(63,143,107,.18); }
+#homelove { scroll-margin-top: 6rem; }
+@media (max-width: 900px) {
+  .feature.homelove .art.duo { padding: 2.5rem 1rem 0; align-items: end; }
+  .feature.homelove .art.duo .iphone { --w: 180px; margin-bottom: -60px; }
+  .feature.homelove .art.duo .back { margin-right: -50px; }
+}
+.pill a, .pill-note { white-space: nowrap; }
+@media (max-width: 560px) { .pill { gap: .55rem; padding: .45rem .85rem; } .pill-note, .pill-note + .pill-sep, .pill .pill-sep:nth-last-child(2) { display: none; } .pill .sc-logo { font-size: .95rem; } .pill .aa-logo, .pill .hl-logo { font-size: .9rem; } }
 </style>
 </head>
 <body>
@@ -370,7 +397,7 @@ html { scroll-behavior: smooth; }
 
   <div class="hero" id="top">
     <div class="wrap">
-      <div class="pill"><a class="sc-logo" href="#sitcom">Sitcom</a><span class="pill-sep" aria-hidden="true"></span><a class="aa-logo" href="#askaway"><span class="aa-bird" aria-hidden="true"></span>Ask Away</a><span class="pill-sep" aria-hidden="true"></span><span class="pill-note">Two apps and counting</span></div>
+      <div class="pill"><a class="sc-logo" href="#sitcom">Sitcom</a><span class="pill-sep" aria-hidden="true"></span><a class="aa-logo" href="#askaway"><span class="aa-bird" aria-hidden="true"></span>Ask Away</a><span class="pill-sep" aria-hidden="true"></span><a class="hl-logo" href="#homelove"><span class="hl-heart" aria-hidden="true"></span>homelove</a><span class="pill-sep" aria-hidden="true"></span><span class="pill-note">Three apps and counting</span></div>
       <h1>We make apps people love to open.</h1>
       <p>Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, each one made to do one thing really well.</p>
       <div class="cta">
@@ -457,6 +484,32 @@ html { scroll-behavior: smooth; }
         </div>
       </article>
 
+      <article class="feature homelove" id="homelove">
+        <div class="copy">
+          <span class="onair soon"><i></i> Coming soon to iPhone</span>
+          <h3 class="hl-logo"><span class="hl-heart" aria-hidden="true"></span>homelove</h3>
+          <h3>The operating system for your home.</h3>
+          <p>Property value, finances, insurance, vendors, equipment and family, all in one place and always up to date.</p>
+          <ul class="points">
+            <li>See your home's value and equity at a glance</li>
+            <li>Never miss a renewal, a filter change or a due date</li>
+            <li>Every vendor, warranty and document in one spot</li>
+          </ul>
+          <div class="cta">
+            <!-- Homelove: replace href with the App Store link once it's listed -->
+            <a class="btn store hl-btn" href="#" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.33 1.9-3.45 1.99-3.5-1.08-1.59-2.77-1.8-3.37-1.83-1.43-.15-2.8.84-3.53.84-.73 0-1.85-.82-3.04-.8a4.5 4.5 0 0 0-3.8 2.31c-1.62 2.8-.41 6.96 1.17 9.24.77 1.11 1.69 2.37 2.9 2.32 1.16-.05 1.6-.75 3.01-.75 1.4 0 1.8.75 3.03.73 1.25-.02 2.04-1.13 2.81-2.25.88-1.29 1.25-2.54 1.27-2.6-.03-.01-2.43-.93-2.44-3.71zM14.06 5.75c.64-.78 1.08-1.86.96-2.94-.93.04-2.05.62-2.71 1.39-.6.69-1.12 1.79-.98 2.85 1.03.08 2.09-.53 2.73-1.3z"/></svg>
+              <span><small>Coming soon on the</small><strong>App Store</strong></span>
+            </a>
+            <a class="btn ghost" href="https://thehomelove.com" rel="noopener">Visit thehomelove.com</a>
+          </div>
+        </div>
+        <div class="art duo" aria-hidden="true">
+          <div class="iphone back"><div class="screen"><span class="island"></span><div class="status hl"><span>9:41</span><span class="bat"></span></div><img src="img/homelove-tasks.jpg" alt="" loading="lazy"></div></div>
+          <div class="iphone front"><div class="screen"><span class="island"></span><div class="status hl"><span>9:41</span><span class="bat"></span></div><img src="img/homelove-dashboard.jpg" alt="" loading="lazy"></div></div>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -501,7 +554,7 @@ html { scroll-behavior: smooth; }
 
   <section class="closer">
     <div class="wrap">
-      <h2>Two apps in. More on the way.</h2>
+      <h2>Three apps in. More on the way.</h2>
       <a class="btn blue" href="#apps">See the apps</a>
     </div>
   </section>
@@ -522,10 +575,11 @@ html { scroll-behavior: smooth; }
 /* METRICS: the one place to update the numbers. Use null for anything not measured yet. */
 var METRICS = {
   updated: "November 2026", // FILLER: placeholder numbers until real analytics are hooked up
-  totals: { downloads: 1200000, mau: 340000, rating: 4.8, countries: 62 },
+  totals: { downloads: 1400000, mau: 400000, rating: 4.8, countries: 62 },
   apps: [
     { name: "Sitcom", downloads: 480000, mau: 120000, rating: 4.8, signature: { label: "Intros made", value: 2100000 } },
-    { name: "Ask Away", downloads: 720000, mau: 220000, rating: 4.9, signature: { label: "Questions answered", value: 3400000 } }
+    { name: "Ask Away", downloads: 720000, mau: 220000, rating: 4.9, signature: { label: "Questions answered", value: 3400000 } },
+    { name: "Homelove", downloads: 200000, mau: 60000, rating: 4.9, signature: { label: "Homes organized", value: 85000 } }
   ]
 };
 (function () {
