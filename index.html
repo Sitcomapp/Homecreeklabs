@@ -384,6 +384,12 @@ html { scroll-behavior: smooth; }
   .feature .art, .feature.askaway .art.duo, .feature.homelove .art.duo { padding: 1rem 1rem 2.5rem; align-items: center; }
 }
 @media (max-width: 640px) { .stage .side { --w: 118px; } .stage .center { --w: 184px; } .stage { overflow: visible; } }
+/* Bottom safe area + home indicator, so content at the very bottom of a screenshot isn't clipped by the rounded screen corners */
+.screen { padding-bottom: calc(var(--w) * .085); }
+.screen::after { content: ""; position: absolute; left: 50%; bottom: calc(var(--w) * .03); translate: -50% 0; width: 36%; height: calc(var(--w) * .014); min-height: 3px; border-radius: 999px; background: rgba(255,255,255,.75); }
+.screen:has(.status.dark) { background: #f7f8fa; }
+.screen:has(.status.hl) { background: #f5f4ef; }
+.screen:has(.status.dark)::after, .screen:has(.status.hl)::after { background: rgba(0,0,0,.7); }
 </style>
 </head>
 <body>
