@@ -331,6 +331,12 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
 .pill-sep { width: 1px; height: 1.1rem; background: var(--glass-btn-line); }
 .pill-note { font-weight: 600; color: var(--glass-muted); }
 @media (max-width: 420px) { .pill { gap: .5rem; padding-inline: .8rem; } .pill-note { font-size: .78rem; } }
+.pill a { text-decoration: none; transition: transform .15s ease; }
+.pill a.aa-logo { color: inherit; }
+.pill a:hover { transform: translateY(-1px) scale(1.04); }
+#sitcom, #askaway { scroll-margin-top: 6rem; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
@@ -364,7 +370,7 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
 
   <div class="hero" id="top">
     <div class="wrap">
-      <a class="pill" href="#apps"><span class="sc-logo">Sitcom</span><span class="pill-sep" aria-hidden="true"></span><span class="aa-logo"><span class="aa-bird" aria-hidden="true"></span>Ask Away</span><span class="pill-sep" aria-hidden="true"></span><span class="pill-note">Two apps and counting</span></a>
+      <div class="pill"><a class="sc-logo" href="#sitcom">Sitcom</a><span class="pill-sep" aria-hidden="true"></span><a class="aa-logo" href="#askaway"><span class="aa-bird" aria-hidden="true"></span>Ask Away</a><span class="pill-sep" aria-hidden="true"></span><span class="pill-note">Two apps and counting</span></div>
       <h1>We make apps people love to open.</h1>
       <p>Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, each one made to do one thing really well.</p>
       <div class="cta">
