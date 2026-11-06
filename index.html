@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, starting with Sitcom.">
+<meta name="description" content="Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, starting with Sitcom and Ask Away.">
 <meta name="theme-color" content="#a9d2f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1834" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://homecreeklabs.app/">
@@ -12,14 +12,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://homecreeklabs.app/">
 <meta property="og:title" content="Home Creek Labs">
-<meta property="og:description" content="We make apps people love to open. Home of Sitcom.">
+<meta property="og:description" content="We make apps people love to open. Home of Sitcom and Ask Away.">
 <meta property="og:image" content="https://homecreeklabs.app/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Home Creek Labs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Shrikhand&family=Gaegu:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Shrikhand&family=Plus+Jakarta+Sans:wght@800&family=Gaegu:wght@700&display=swap">
 <style>
 /* Layout: an open sky. Headline up top, real app screens on iPhones floating in clouds, then the app lineup as big rounded cards. */
 :root {
@@ -193,6 +193,21 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .wm-wave path { fill: none; stroke: var(--fg); stroke-width: 2.2; stroke-linecap: round; vector-effect: non-scaling-stroke; opacity: .85; }
 .wm-labs { letter-spacing: .01em; }
 
+
+/* Ask Away card */
+.feature + .feature { margin-top: 1.25rem; }
+.feature.askaway { background: #050b17; color: #eef2f8; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
+.feature.askaway .art { background: radial-gradient(60% 55% at 50% 45%, rgba(217,169,95,.38), transparent 70%), radial-gradient(45% 40% at 70% 85%, rgba(70,110,200,.35), transparent 70%); }
+.feature.askaway .art .iphone { rotate: -4deg; }
+.feature.askaway p { color: #a7b0c0; }
+.feature.askaway .points li { color: #dde3ee; }
+.feature.askaway .points li::before { background: #d9a95f; }
+.aa-mark { font-family: "Plus Jakarta Sans", var(--font); font-weight: 800; font-size: clamp(2.6rem, 6vw, 3.8rem); letter-spacing: -.04em; line-height: 1; margin: 0; color: #f3f5f9; }
+.aa-btn { background: #d9a95f; color: #0b1220; }
+.feature.askaway .btn.ghost { background: transparent; color: #eef2f8; border-color: rgba(238,242,248,.22); }
+.pill b.aa { font-family: "Plus Jakarta Sans", var(--font); font-weight: 800; font-size: .82rem; letter-spacing: -.02em; background: #0b1220; color: #d9a95f; padding: .2rem .6rem; }
+.pill b + b { margin-left: -.25rem; }
+
 /* ---------- Sections ---------- */
 section { padding-block: 5rem; position: relative; }
 .eyebrow { font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 .7rem; }
@@ -255,6 +270,8 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
   .feature .art { padding: 2.5rem 1rem 0; align-items: end; }
   .feature .art .iphone { --w: 250px; rotate: 0deg; margin-bottom: -90px; }
   .feature .copy { padding: 2.25rem 1.6rem 2.5rem; order: -1; }
+  .feature.askaway { grid-template-columns: minmax(0, 1fr); }
+  .feature.askaway .art .iphone { rotate: 0deg; }
   .lab, .how { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
@@ -295,14 +312,14 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
           <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
           <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
         </button>
-        <a class="btn" href="#sitcom">Get Sitcom</a>
+        <a class="btn" href="#apps">Get the apps</a>
       </nav>
     </div>
   </header>
 
   <div class="hero" id="top">
     <div class="wrap">
-      <a class="pill" href="#sitcom"><b>Sitcom</b> Our first app is here</a>
+      <a class="pill" href="#apps"><b>Sitcom</b><b class="aa">ask away</b> Two apps and counting</a>
       <h1>We make apps people love to open.</h1>
       <p>Home Creek Labs is an app studio. We design, build and run a growing lineup of apps, each one made to do one thing really well.</p>
       <div class="cta">
@@ -312,10 +329,10 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
     </div>
   </div>
 
-  <div class="stage" aria-label="Sitcom on iPhone">
+  <div class="stage" aria-label="Sitcom and Ask Away on iPhone">
     <div class="float f2 s-left"><div class="iphone side"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/sitcom-size.jpg" alt="Sitcom: How big is the cast? screen" loading="lazy"></div></div></div>
     <div class="float f1"><div class="iphone center"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/sitcom-category.jpg" alt="Sitcom: First, what kind of show is this? screen"></div></div></div>
-    <div class="float f3 s-right"><div class="iphone side"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/sitcom-member.jpg" alt="Sitcom: Starring Person 1 screen" loading="lazy"></div></div></div>
+    <div class="float f3 s-right"><div class="iphone side"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/askaway-home.jpg" alt="Ask Away: Ask the people you follow what matters most" loading="lazy"></div></div></div>
   </div>
 </div>
 
@@ -358,21 +375,42 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
         </div>
       </article>
 
+      <article class="feature askaway" id="askaway">
+        <div class="art" aria-hidden="true">
+          <div class="iphone"><div class="screen"><span class="island"></span><div class="status"><span>9:41</span><span class="bat"></span></div><img src="img/askaway-home.jpg" alt="" loading="lazy"></div></div>
+        </div>
+        <div class="copy">
+          <span class="onair"><i></i> Live sessions happening now</span>
+          <h3 class="aa-mark">ask away</h3>
+          <h3>Ask the people you follow what matters most.</h3>
+          <p>Join live Q&amp;A sessions with founders, creators and experts. Ask your own question or back the ones you want answered most, and the audience decides what gets asked next.</p>
+          <ul class="points">
+            <li>Live, face-to-face sessions with real hosts</li>
+            <li>Back a question to move it up the queue</li>
+            <li>Anyone can apply to host their own Ask Away</li>
+          </ul>
+          <div class="cta">
+            <a class="btn aa-btn" href="https://askawaylive.com" rel="noopener">Visit askawaylive.com</a>
+            <a class="btn ghost" href="https://askawaylive.com/browse" rel="noopener">Browse live sessions</a>
+          </div>
+        </div>
+      </article>
+
       <div class="lab">
         <div class="slot">
-          <div class="q" aria-hidden="true">02</div>
+          <div class="q" aria-hidden="true">03</div>
           <h4>In the lab</h4>
-          <p>Our next app is being built now. Name and details coming soon.</p>
+          <p>Our third app is being built now. Name and details coming soon.</p>
           <span class="tag">Coming soon</span>
         </div>
         <div class="slot">
-          <div class="q" aria-hidden="true">03</div>
+          <div class="q" aria-hidden="true">04</div>
           <h4>In the lab</h4>
           <p>Another app on the way. Check back here for the launch.</p>
           <span class="tag">Coming soon</span>
         </div>
         <div class="slot">
-          <div class="q" aria-hidden="true">04</div>
+          <div class="q" aria-hidden="true">05</div>
           <h4>Your idea here</h4>
           <p>We are always sketching what comes next. The lineup keeps growing.</p>
           <span class="tag">Always building</span>
@@ -401,7 +439,7 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
           <tbody id="app-rows"></tbody>
         </table>
       </div>
-      <p class="metrics-note" id="metrics-note">Numbers go live once Sitcom launches.</p>
+      <p class="metrics-note" id="metrics-note">Numbers go live as our apps launch.</p>
     </div>
   </section>
 
@@ -422,8 +460,8 @@ footer .links a { text-decoration: none; } footer .links a:hover { color: var(--
 
   <section class="closer">
     <div class="wrap">
-      <h2>More apps are on the way.</h2>
-      <a class="btn blue" href="#sitcom">Start with Sitcom</a>
+      <h2>Two apps in. More on the way.</h2>
+      <a class="btn blue" href="#apps">See the apps</a>
     </div>
   </section>
 </main>
@@ -445,7 +483,8 @@ var METRICS = {
   updated: null, // e.g. "November 2026"
   totals: { downloads: null, mau: null, rating: null, countries: null },
   apps: [
-    { name: "Sitcom", downloads: null, mau: null, rating: null, signature: { label: "Intros made", value: null } }
+    { name: "Sitcom", downloads: null, mau: null, rating: null, signature: { label: "Intros made", value: null } },
+    { name: "Ask Away", downloads: null, mau: null, rating: null, signature: { label: "Questions answered", value: null } }
   ]
 };
 (function () {
